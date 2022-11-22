@@ -1,0 +1,145 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Please fill the form</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+      <!-- fevicon -->
+      <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="{% static 'https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' %}">
+      <!-- owl stylesheets -->
+      <link href="{% static 'https://fonts.googleapis.com/css?family=Orbitron:400,500,600,700|Poppins:400,700&display=swap' %}" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+      <link rel="stylesoeet" href="{% static 'css/owl.theme.default.min.css' %}">
+      <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css' %}" media="screen">
+   </head>
+   <body>
+
+      <!-- contact section start -->
+      <form  method="post" style="justify" >
+          {% csrf_token %}
+      <div class="contact_section layout_padding">
+        <div class="container">
+          <div class="contact_section_2">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="contact_taital">Please fill this Form...</h1>
+                <div class="mail_section_1" >
+
+                   <label>Name</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text"  name="name" ><br><br>
+<label>Date of birth</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="date"  name="dob"><br><br>
+<label>Age</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="number" name="age"><br><br>
+
+<label>Gender</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<label >Male</label><input type="radio" name="gender">
+<label >Female</label><input type="radio" name="gender"><br><br>
+
+<label>Phone Number</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="tel" id="phone" name="phone" placeholder=""><br><br>
+<label>Email id</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="email" name="email"><br><br>
+<label>Address</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="address"><br><br>
+
+<!--    <script src="{% static 'js/drop.js' %}"></script>-->
+
+<div class="container">
+    <div class="f-group">
+  Districts &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <select name="district" id="district" placeholder="Select Districts" onchange="populate(this.id,'branch')">
+                    <option value="1" selected="selected">Alappuzha</option>
+                    <option value="2" selected="selected">Ernakulam</option>
+                    <option value="3" selected="selected">Idukki</option>
+                    <option value="4" selected="selected">Kannur</option>
+                    <option value="5" selected="selected">Kasaragod</option>
+                    <option value="6" selected="selected">Kollam</option>
+                    <option value="7" selected="selected">Kottayam</option>
+                    <option value="8" selected="selected">Kozhikode</option>
+                    <option value="9" selected="selected">Malappuram</option>
+                    <option value="10" selected="selected">Palakkad</option>
+                    <option value="11" selected="selected">Pathanamthitta</option>
+                    <option value="12" selected="selected">Thiruvananthapuram</option>
+                    <option value="13" selected="selected">Thrissur</option>
+                    <option value="14" selected="selected">Wayanad</option>
+                    <option value="" selected="selected">Please select District</option>
+                    </select>
+    </div>
+  <br><br>
+    <div class="f-group">
+  Branch &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <select name="branch" id="branch">
+
+    <option value="" selected="selected">Please select Branch</option>
+  </select>
+    </div>
+    </div>
+  <br><br>
+
+
+
+
+  Account Type &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select name="account_type" id="account_type">
+                    <option value="" selected="selected">Savings Account</option>
+                    <option value="" selected="selected">Current Account</option>
+
+    <option value="" selected="selected">Please select Account Type</option>
+  </select>
+  <br><br>
+    Materials Provided &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="checkbox" name="materials_provide"><label>Note Book</label>
+    <input type="checkbox" name="statemen"><label>Debit Card</label>
+    <input type="checkbox" name="stateme"><label>Credit Card</label>
+    <input type="checkbox" name="statement"><label>Check Book</label>  <br><br>
+
+                   FIRST SUBMIT YOUR FORM AND THEN VIEW YOUR FORM<br>
+                   <input type="submit">
+                    <button ><a href="{% url 'msg' %}">View Form</a></button>
+<!--                 <a href="{% url 'msg' %}"><input type="submit"></a>-->
+
+    <a class="btn btn-warning" href= "{% url 'logout' %}">Logout</a>
+
+
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="images_main">
+                  <div class="image_1"><img style="height:500px;width:100%;" src="{% static 'images/form.jpg' %}" class="image_1">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+          </form>
+      {% for msg in messages %}
+      {{msg}}
+      {% endfor %}
+
+
+    <!-- contact section end -->
+      <script src="{% static 'js/form.js' %}"></script>
+
+
+   </body>
+</html>
